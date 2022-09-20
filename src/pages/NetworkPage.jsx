@@ -1,92 +1,56 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import {
-  Container,
-  MainArea,
-  MainAreaTitle,
-  StatCardContainer,
-} from "./styles/Network.styles";
-import { FaTemperatureHigh } from "react-icons/fa";
-import { BsDropletHalf } from "react-icons/bs";
-import { BiWind } from "react-icons/bi";
-// import { useNavigate } from "react-router-dom";
-import StatCard from "../components/StatCard";
-import FilterableChart from "../components/FilterableChart";
 import { useParams } from "react-router-dom";
-
-const data = [
-  {
-    timeStamp: "12/12/2014",
-    point: {
-      value: "24",
-    },
-  },
-  {
-    timeStamp: "12/12/2014",
-    point: {
-      value: "24",
-    },
-  },
-  {
-    timeStamp: "12/12/2014",
-    point: {
-      value: "24",
-    },
-  },
-  {
-    timeStamp: "12/12/2014",
-    point: {
-      value: "24",
-    },
-  },
-  {
-    timeStamp: "12/12/2014",
-    point: {
-      value: "24",
-    },
-  },
-  {
-    timeStamp: "12/12/2014",
-    point: {
-      value: "24",
-    },
-  },
-];
+import styled from "styled-components";
+import Layout from "../components/Layout";
+import { Container } from "./styles/Network.styles";
+import { PageTitle } from "./styles/Networks.styles";
 
 const NetworkPage = () => {
-  const {networkId} = useParams();
-  console.log(networkId);
-  //   const nav = useNavigate();
+  const { networkId } = useParams();
   return (
-    <Container>
-      <Navbar />
-      <MainArea>
-        <MainAreaTitle>Network - 001</MainAreaTitle>
-        <h1>Network Wide Readings</h1>
-        <StatCardContainer>
-          <StatCard
-            title={"Temprature"}
-            icon={<FaTemperatureHigh />}
-            value={"24"}
-            unit={"C"}
-          />
-          <StatCard
-            icon={<BsDropletHalf />}
-            title={"Humidity"}
-            value={"60"}
-            unit={"%"}
-          />
-          <StatCard
-            icon={<BiWind />}
-            title={"Amonia"}
-            value={"30"}
-            unit={"ppm"}
-          />
-        </StatCardContainer>
-        <FilterableChart data={data} />
-      </MainArea>
-    </Container>
+    <Layout>
+      <Container>
+        <PageTitle>Network 001 {networkId}</PageTitle>
+        <NetworkCard>
+          <NewtworkInfoCard>
+            <Text>Connected Nodes: 2</Text>
+            <Text>Network Status: Active</Text>
+            <Text>Last Transmition: 12:01:00-2022/15/6</Text>
+            <Text>Firmware Ver: 0.3</Text>
+          </NewtworkInfoCard>
+          <NewtworkReadingsCard>
+            <Text>Firmware Ver: 0.3</Text>
+            <Text>Firmware Ver: 0.3</Text>
+            <Text>Firmware Ver: 0.3</Text>
+            <Text>Firmware Ver: 0.3</Text>
+            <Text>Firmware Ver: 0.3</Text>
+            <Text>Firmware Ver: 0.3</Text>
+            <Text>Firmware Ver: 0.3</Text>
+            <Text>Firmware Ver: 0.3</Text>
+            <Text>Firmware Ver: 0.3</Text>
+          </NewtworkReadingsCard>
+        </NetworkCard>
+      </Container>
+    </Layout>
   );
 };
 
 export default NetworkPage;
+
+const NetworkCard = styled.div`
+  border: 1px solid black;
+  display: flex;
+`;
+
+const Text = styled.div`
+  font-size: 16px;
+  /* letter-spacing: 0.2rem; */
+`;
+
+const NewtworkInfoCard = styled.div`
+  border: 1px solid black;
+`;
+
+const NewtworkReadingsCard = styled.div`
+  border: 1px solid black;
+`;

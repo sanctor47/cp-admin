@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100%;
   background-color: #f1f1f1;
   color: #13121299;
-  display: flex;
-  /* justify-content: center; */
-  flex-direction: column;
-  gap: 0.5rem;
+`;
+
+export const PageTitle = styled.div`
+  font-size: x-large;
+  letter-spacing: 0.2rem;
+  width: 100%;
+  padding: 1rem;
 `;
 
 export const MainArea = styled.div`

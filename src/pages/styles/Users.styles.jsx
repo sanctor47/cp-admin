@@ -18,7 +18,7 @@ export const PageTitle = styled.div`
   width: 100%;
 `;
 
-export const AddNetworkButton = styled.button`
+export const AddUserButton = styled.button`
   border:none;
   border-radius: 5px;
   background-color: #c1c1c1;

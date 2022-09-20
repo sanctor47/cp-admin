@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-// import { AuthProvider } from './contexts/useAuth';
 import AppRoutes from './AppRoutes';
 import { AuthProvider } from './contexts/AuthContext';
 

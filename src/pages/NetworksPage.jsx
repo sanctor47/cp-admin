@@ -1,15 +1,23 @@
-import { Container, ListContainer, PageTitle } from "./styles/Networks.styles";
+import {
+  AddNetworkButton,
+  Container,
+  ListContainer,
+  PageAppBar,
+  PageTitle,
+} from "./styles/Networks.styles";
 import { useGetAllNetworks } from "../queries/NetworkQueries";
 import Layout from "../components/Layout";
 import NetworksListItem from "../components/NetworksListItem";
 
 const NetworksPage = () => {
   const { data: NetworksData, status, error } = useGetAllNetworks();
-
   return (
     <Layout>
       <Container>
-        <PageTitle>Networks</PageTitle>
+        <PageAppBar>
+          <PageTitle>Networks</PageTitle>
+          <AddNetworkButton>New Network</AddNetworkButton>
+        </PageAppBar>
         <ListContainer>
           {status === "loading" && <h1>Loading....</h1>}
           {status === "error" && <h1>Error:{error}</h1>}

@@ -6,10 +6,10 @@ const Navbar = () => {
   return (
     <Container>
       <NavContainer>
-        <NavItem to="/">Home</NavItem>
-        <NavItem to="/">Users</NavItem>
-        <NavItem to="/">Devices</NavItem>
-        <NavItem to="/">Settings</NavItem>
+        <NavItem to="/networks">Networks</NavItem>
+        <NavItem to="/users">Users</NavItem>
+        <NavItem to="/devices">Devices</NavItem>
+        <NavItem to="/settings">Settings</NavItem>
       </NavContainer>
     </Container>
   );
