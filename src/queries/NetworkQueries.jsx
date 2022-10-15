@@ -22,7 +22,7 @@ export const useGetNetworkById = (id) => {
 //   const { logout } = useAuth();
   return useQuery(["network", id], () => getNetworkById(id), {
     onSuccess: (data) => {
-      // console.log(data);
+      console.log(data);
     },
     onError: (error) => {
       // console.log(error.response.data.message);

@@ -8,7 +8,12 @@ export const getLatestNetworkReadings = async (id) => {
 };
 
 export const getLatestDeviceReadings = async (id) => {
-  const response = await HttpClient.get(`${BASE_URL}/deviceId/${id}`);
+  const response = await HttpClient.get(`${BASE_URL}/latest/all/${id}`);
+  return response;
+};
+
+export const getDeviceReadings = async (id) => {
+  const response = await HttpClient.get(`${BASE_URL}/all/device/${id}`);
   return response;
 };
 

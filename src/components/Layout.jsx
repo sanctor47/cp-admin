@@ -15,4 +15,5 @@ export default Layout;
 const Container = styled.div`
   background-color: #f1f1f1;
   color: #13121299;
+  width: 100%;
 `;

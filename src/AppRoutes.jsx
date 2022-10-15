@@ -6,7 +6,7 @@ import NetworksPage from "./pages/NetworksPage";
 import DevicesPage from "./pages/DevicesPage";
 import UsersTable from "./components/UsersTable";
 import UsersPage from "./pages/UsersPage";
-
+import DevicePage from "./pages/DevicePage";
 const RouteGaurd = () => {
   // const auth = localStorage.getItem("userToken")
   const auth = "7409327509327";
@@ -24,7 +24,7 @@ const AppRoutes = () => {
           <Route excat path="/networks" element={<NetworksPage />} />
           <Route path="/networks/:networkId" element={<NetworkPage />} />
           <Route path="/devices" element={<DevicesPage />} />
-          {/* <Route path="/devices/:deviceId" element={<DeviceProfilePage />} /> */}
+          <Route path="/devices/:deviceId" element={<DevicePage />} />
           <Route path="/users" element={<UsersPage />} />
           {/* <Route path="/users/:userId" element={<UserProfilePage />} /> */}
           {/* <Route path="/users" element={<Users />} />

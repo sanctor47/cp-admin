@@ -1,5 +1,6 @@
 import React from "react";
 import DevicesListItem from "../components/DevicesListItem";
+import DevicesTable from "../components/DevicesTable";
 import Layout from "../components/Layout";
 import { useGetAllDevices } from "../queries/DevicesQueries";
 import {
@@ -11,7 +12,7 @@ import {
 } from "./styles/Devices.styles";
 
 const DevicesPage = () => {
-  const { data: DevicesData, status, error } = useGetAllDevices();
+  const { data, status, error } = useGetAllDevices();
   return (
     <Layout>
       <Container>
@@ -22,14 +23,7 @@ const DevicesPage = () => {
         <ListContainer>
           {status === "loading" && <h1>Loading....</h1>}
           {status === "error" && <h1>Error:{error}</h1>}
-          {status === "success" &&
-            (DevicesData.length === 0 ? (
-              <h1>No Devices found</h1>
-            ) : (
-              DevicesData.map((data) => {
-                return <DevicesListItem network={data} key={data._id} />;
-              })
-            ))}
+          {status === "success" && <DevicesTable data={data} />}
         </ListContainer>
       </Container>
     </Layout>
